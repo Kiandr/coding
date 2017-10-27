@@ -1,4 +1,3 @@
 # Important Data Structure: 
 
-In this reposiroty, I implement and practice importnant data structure, and respond to questions such as Sorting, Searching, String manipulation, array and pointer managament. 
-
+In this repository, I implement and practice important data structure, and respond to questions such as Sorting, Searching, String manipulation, array and pointer management.
