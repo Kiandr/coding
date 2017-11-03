@@ -25,7 +25,7 @@ void sortArray( int const *header, int len){
 
 int main(){
 
-int array []={7,8,5,2,4,6,3}
+int array []={7,8,5,2,4,6,3};
 
 int len = sizeof(array)/sizeof(int);
 
