@@ -1,5 +1,6 @@
 /**
 Merge Sort Algorithm C Example by Codebind.com
+Nov 9th 2017
 */
 #include "stdio.h"
 #include "stdlib.h"
