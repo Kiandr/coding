@@ -6,32 +6,25 @@ Author: Kian D.Rad
 Date Nov 14th 2017
 ReadMe: selection sort algorithm for int array
 */
-void selectionSortInt( int *header, int len){
+void selectionSortInt( int *header, int l){
 
 	int *key = header; 
-	int* prtH = header;
-	//int* prtE = header+len-1;
+	int *prtH = header;
+	
 	// first iteration
-	for (int i=0; i<len-1; i++){
-		key = &prtH[i];
-		int j = i;
-				printf("key=%d. i= %d\n",*key,i);
-		// second interation 
-		while ( j>=0 && j<len)
-			{
-				if (prtH[j]>*key)
-					printf("%d , %d", prtH[j],*key);
-				
-				// main sort condition 
-				printf("j=%d. prtH[j]= %d\n",prtH[j],j);
-				j++;			
-			
-			}				
+	for (int j=0; j<l; j++){
+		int i = j;
+		key = &prtH[j];
+		while (prtH[i]>prtH[i+1] && i<l)
+			i++;
 
-		}
-		
-		
-		
+		//if (prtH[i]>prtH[i+1]){
+		int temp = *key;
+		*key = prtH[i];
+		prtH[i]=temp;
+		//}
+	}
+
 	
 }
 
@@ -60,7 +53,7 @@ void printArray(int arr[], int size)
 // Driver program to test above functions
 int main()
 {
-    int arr[] = {10 };
+    int arr[] = {9,8,7,6,5,4,3,2,1};
     int n = sizeof(arr)/sizeof(int);
     printArray(arr, n);
     selectionSortInt(arr, n);
