@@ -42,30 +42,20 @@ A Node is defined as:
 bool has_cycle(Node* head) {
     // Complete this function
     // Do not write the main method
-    if (head==NULL){
+    if (head==NULL)
         return false;
-    }
 
-    if (head->next == NULL)
-        return false;
+     Node *prtF = head->next;
+     Node *prtS = head;
     
-    if (head == head->next)
-        return false; 
-    
-    struct Node *prtS = head->next->next;
-    struct Node *prtF = head->next;
-
-
-
-    while(prtF->next!=NULL && prtS!=NULL && prtF!=NULL){
-       if (prtF==prtS)
-           return true;
+    while (prtF!=prtS)
+    {
+    if(prtF->next==NULL) return false;
         prtF=prtF->next->next;
         prtS = prtS->next;
     }
-
-
-    return false;
+    
+    return true;
 }
 
 // C++
