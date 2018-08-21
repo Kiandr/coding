@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <stack>
 
 struct Node {
 	int val;
@@ -57,10 +57,22 @@ void reverse(struct Node *head)
 	}
 }
 
-void reverse_stacl(struct Node *head) {
+void reverse_stack(struct Node *head) {
+	if (head == NULL) return;
+	struct Node *prt = head;
+	std::stack<int> mystack;
 
+	while (prt != NULL) {
+		mystack.push(prt->val);
+		prt = prt->next;
+	}
+	while (!mystack.empty()) {
+		std::cout << mystack.top()<<std::endl;
+		mystack.pop();
+	}
 
 }
+
 
 
 int main() {
@@ -71,7 +83,8 @@ int main() {
 	head = Add(head, 40);
 
 	//print(head);
-	reverse(head);
+	//reverse(head);
+	reverse_stack(head);
 	std::cout << "End of progarm";
 	return 0;
 }
