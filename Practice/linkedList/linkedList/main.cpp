@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stack>
+#include <vector>
 
 struct Node {
 	int val;
@@ -73,6 +74,27 @@ void reverse_stack(struct Node *head) {
 
 }
 
+void reverseVector(struct Node * head) {
+
+	if (head == NULL)
+		return;
+
+	struct Node * prt = head;
+	std::vector<struct Node*> myVector;
+	int size = 0;
+
+	while (prt != NULL)
+	{
+		myVector.push_back(prt);
+		size++;
+		prt = prt->next;
+	}
+
+	for (int i = myVector.size()-1; i >= 0; i--)
+		std::cout << myVector.at(i)->val<<std::endl;
+
+	return;
+}
 
 
 int main() {
@@ -84,7 +106,8 @@ int main() {
 
 	//print(head);
 	//reverse(head);
-	reverse_stack(head);
+	//reverse_stack(head);
+	reverseVector(head);
 	std::cout << "End of progarm";
 	return 0;
 }
