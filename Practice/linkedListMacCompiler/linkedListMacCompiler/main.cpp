@@ -37,8 +37,8 @@ void print(struct Node *head) {
     struct Node* prt = head;
     while (prt != NULL) {
         std::cout << prt->val<<std::endl;
-     //   if(prt->prev!=nullptr)
-       //     std::cout << "prev=" << prt->prev->val << std::endl;
+        //   if(prt->prev!=nullptr)
+        //     std::cout << "prev=" << prt->prev->val << std::endl;
         prt = prt->next;
     }
     return;
