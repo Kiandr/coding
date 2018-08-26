@@ -137,6 +137,33 @@ struct Node* insertNodeAtPosition(struct Node* head, int data, int position) {
 }
 
 
+// Complete the has_cycle function below.
+
+/*
+ * For your reference:
+ *
+ * SinglyLinkedListNode {
+ *     int data;
+ *     SinglyLinkedListNode* next;
+ * };
+ *
+ */
+bool has_cycle(struct Node* head) {
+    if (head == NULL) return false;
+    if (head->next == NULL) return false;
+    
+    struct Node*pF = head->next;
+    struct Node*pS = head;
+    
+    while (pF!=NULL && pF->next != NULL){
+        if (pF == pS)
+            return true;
+        pF=pF->next->next;
+        pS=pS->next;
+    }
+    return false;
+}
+
 int main() {
     struct Node *head = NULL;
     head = Add(head, 10);
