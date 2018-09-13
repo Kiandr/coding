@@ -1,33 +1,7 @@
-// https://www.geeksforgeeks.org/reverse-a-linked-list/
 // C program to reverse a linked list in groups of given size 
-
 #include<stdio.h> 
 #include<stdlib.h> 
-
-   struct SinglyLinkedListNode {
-      int data;
-      SinglyLinkedListNode* next;
-  }SinglyLinkedListNode;
-
-struct SinglyLinkedListNode *reverseLinkedList(struct SinglyLinkedListNode* head) {
-if (head == NULL || head->next == NULL) return head;
-    struct SinglyLinkedListNode* prt = head;
-    struct SinglyLinkedListNode* prev = NULL;
-    struct SinglyLinkedListNode* next = NULL;
-    
-    
-    while (prt!=NULL){
-        next = prt->next;// set next pointer 
-        prt->next = prev; // rotate
-        prev = prt;     // shift to right / new header 
-        prt=next;       // shift to right
-        next=next->next;// shift to right
-    }
-
-    return prev;
-}
-
-
+  
 /* Link list node */
 struct Node 
 { 
@@ -45,20 +19,20 @@ struct Node *reverse (struct Node *head, int k)
     int count = 0;    
       
     /*reverse first k nodes of the linked list */ 
-    while (current != NULL /* && count < k*/) 
+    while (current != NULL && count < k) 
     { 
-        next  = current->next;  // Set nextPRT
-        current->next = prev;   // Rotate
-        prev = current;         // New Header
-        current = next;         // Shift to right 
-        count++;                
+        next  = current->next; 
+        current->next = prev; 
+        prev = current; 
+        current = next; 
+        count++; 
     } 
       
     /* next is now a pointer to (k+1)th node  
        Recursively call for the list starting from current. 
        And make rest of the list as next of first node */
-    //if (next !=  NULL) 
-    //   head->next = reverse(next, k); 
+    if (next !=  NULL) 
+       head->next = reverse(next, k); 
     /* prev is new head of the input list */
     return prev; 
 } 
