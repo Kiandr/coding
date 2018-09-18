@@ -1,0 +1,225 @@
+#include <stdio.h>
+
+// test 1 5
+
+
+void  fizzBuzz( int start, int finish){
+
+int initVal = start;
+if (start == 0) return;
+if (finish == 0) return;
+
+for ( start<= finsh; start++){
+	if (start%3 == 0) printf("Fizz\n");
+	if (start%5 == 0) printf("Buzz\n");
+	}
+	printf("%d, %d\n", initVal, finish );
+}
+
+
+
+
+// Is Palandrome 
+#include "stdbool.h"
+#include "stdio.h"
+
+
+bool IsPal( char * str){
+
+	char *prtS = str;
+	char *prtE = str+(str.strlen(str));
+
+	if (str == NULL)
+	return false; 
+	
+while (prtS<prtE){	
+	if ((char*)prtS == (char*)prtE)
+	{
+		prtS++;
+		prtE--;
+	}
+	else 
+     	return false;
+	}
+	return true;
+}
+
+main (){ 
+
+return 0;
+
+}
+
+
+//// 
+#include <stdio.h>
+
+
+
+void removeBfromA(char * prtA, char *prtB){
+
+if (prtA == nullprt) return;
+if (prtB == nullprt) return;
+
+char *A = prtA;
+char *B = prtB;
+int LA = strLen(prtA);
+int LB = strLen(prtB);
+
+
+while ((char*)A!='\n'  && (char*)B!=''\n){
+	if ((char*)A == (char*)B)
+	{
+		A++;
+		B++;
+	}
+	if (LA>LB)
+	foo(A,LA);
+
+}
+
+
+
+}
+
+
+int foo(char **arr){
+
+	if (arr == nulprt) return;
+	
+	char *prt = arr;
+	
+	int lenArr = 0;
+	char *prtLen = arr;
+	while (prtLen!= NULL) { prtLen++; lenArr++;} 
+	
+	
+	while (prtLen>=0){
+	for ( int i = prtL ; i>=0; i--){
+	 if (!strstr(prt[prtL], prt[i]))
+			removeBfromA( prt[prtL], prt[i]);
+	}
+	
+	prt[prtL]
+	
+	}
+	
+
+
+}
+
+
+
+using std;
+int main(){
+
+string myArray[5];
+myArray[0] = "Condominium";
+myArray[1] = "Condo";
+myArray[2] = "TownHouse/Condo";
+myArray[3] = "signleFamily";
+myArray[4] = "Condo";
+
+
+string myArrayB[2];
+ myArrayB[0]= "Condo";
+ myArrayB[1]="SingleFamily";
+
+foo(myArray);
+
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+MS MySql
+create table ScreenShare( Id int identity(1.1), name varchar (30))
+insert into ScreenShare ('Kian')
+
+
+select *
+from ScreenShare
+where ScreenShare.name LIKE ('%T%')
+
+
+-- mood happy sad 
+
+select *
+from ScreenShare
+join mood 
+on ScreenShare.Id = mood.Id
+where ScreenShare.name LIKE ('%T%')
+
+delete from ScreenShare where ( Id = 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
