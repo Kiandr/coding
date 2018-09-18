@@ -12,6 +12,9 @@ int main()
   
     for (int i = 1; i <= 5; i++) 
         g1.push_back(i); 
+       
+        g1.at(0)=10;
+        
   
     cout << "Size : " << g1.size(); 
     cout << "\nCapacity : " << g1.capacity(); 
@@ -32,8 +35,13 @@ int main()
     // Shrinks the vector 
     g1.shrink_to_fit(); 
     cout << "\nVector elements are: "; 
-    for (auto it = g1.begin(); it != g1.end(); it++) 
-        cout << *it << " "; 
+    for (int i = 0; i != g1.size(); i++) 
+        cout << "i=" <<g1.at(i) << " "<<std::endl; 
+        cout<<"Front is "<<g1.front()<<std::endl; 
+        cout<<"Back is "<<g1.back()<<std::endl; 
+        cout<<"data is "<<g1.data()<<std::endl; 
+        cout<<"@ is "<<g1.at(0)<<std::endl; 
+        cout<<"pointer addition is "<<g1.at(0)+sizeof(int)<<std::endl; 
   
     return 0; 
 } 

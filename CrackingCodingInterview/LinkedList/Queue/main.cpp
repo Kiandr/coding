@@ -26,7 +26,7 @@ struct LinkedList *popStack(struct LinkedList *list){
     return list;
 }
 
-struct LinkedList *popQueue(struct LinkedList *list){
+struct LinkedList *Dequeue(struct LinkedList *list){
     
     if (list == NULL || list->head == NULL) return NULL;
     
@@ -38,7 +38,7 @@ struct LinkedList *popQueue(struct LinkedList *list){
 
 
 
-struct LinkedList *add(struct LinkedList *list, int data){
+struct LinkedList *Enqueue(struct LinkedList *list, int data){
     if (list == NULL) {
         list = (struct LinkedList*)malloc(sizeof(LinkedList));
         list->head = (struct Node*)malloc(sizeof(Node));
