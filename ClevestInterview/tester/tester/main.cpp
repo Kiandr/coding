@@ -3,6 +3,8 @@
 #include <vector>
 #include<algorithm>
 
+#include <iostream>
+#include <string>
 // Solution: Q1
 long MeterReader(char *array) {
 	long visitedHouses = 1;
@@ -46,9 +48,29 @@ long MeterReader(char *array) {
 
 int main() {
 
+
+	std::ifstream ifs("question02_input.txt");
+	std::string s;
+	getline(ifs, s, (char)ifs.eof());
+
+	// checking if the file was opened properly!
+	//  std::cout<<s;
+	int n = 10;
+	 //n = s.length();
+
+	// declaring character array 
+
+	char * char_array = new char[s.length() + 1];
+	//strcpy(char_array, s.c_str());
+
+
+	// copying the contents of the  point array 
+	strcpy(char_array, s.c_str());
+
+
 	char myArray[] = "^v^v^v";
 
-	printf("Numberof houses i visisted are %ld", MeterReader(myArray));
+	printf("Numberof houses I have visisted is %ld", MeterReader(char_array));
 	return 0;
 }
 	
