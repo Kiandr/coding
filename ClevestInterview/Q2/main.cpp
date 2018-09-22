@@ -38,10 +38,10 @@ long MeterReader(char *array) {
 
 		prt++;
 	}
-	for (unsigned i =0; i< myList.size(); i++)
-	{
-		std::cout << myList.at(i).first<<myList.at(i).second<<std::endl;
-	}
+//	for (unsigned i =0; i< myList.size(); i++)
+//	{
+//		std::cout << myList.at(i).first<<myList.at(i).second<<std::endl;
+//	}
 	return myList.size();
 
 }
