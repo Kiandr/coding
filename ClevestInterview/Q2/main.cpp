@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include <string>
-// Solution: Q1
+// Solution: Q2
 long MeterReader(char *array) {
 	long visitedHouses = 1;
 	long x = 0;
