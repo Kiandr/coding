@@ -88,4 +88,6 @@ int main() {
 	char myArray[] = "1800COMPUTE";
 	printf("%s", translate(myArray));
 	return 0;
+	.
+	
 }
