@@ -15,16 +15,16 @@ int countingValleys(int n, char* s) {
         int previousHeight;
         int height = 0;
         int valleyCount =0 ;
-        
+
         for(int i = 0; i < n; i++) {
             previousHeight = height;
             if(toupper(s[i]) == 'U') {
                 height++;
-            }   
+            }
             else {
                 height--;
             }
-            
+
             if(previousHeight < 0 && height == 0) {
                 valleyCount++;
             }
