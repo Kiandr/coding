@@ -10,7 +10,7 @@ static std::map <int, int> findPairsOfSum(int array[], int sum){
         for (int j = i+1; j<len; j++)
         {
             if (array[i]+array[j] == sum)
-            myPair.insert({array[i], array[j]});
+            myPair.insert(std::pair<int,int>(array[i], array[j]));
         }
     return myPair;
 }
