@@ -14,9 +14,8 @@ bool isInVector(std::vector<std::pair<int, int>> myVector, int first, int second
         if(it->first == first && it->second == second){
             return 1;
         }
-
 }
-            return 0;
+    return 0;
 }
 
 
@@ -28,17 +27,23 @@ std::vector<std::pair<int,int>>  pairs(int k, std::vector<int> arr) {
     for (int i=0;i<arr.size();i++)
         for(int j=i+1;j<arr.size();j++)
             if (arr.at(i)+arr.at(j) == k){
-                if (isInVector(newVec,arr.at(i), arr.at(j))!=1 ){
-                std::cout<<arr.at(i)<< "---"<<arr.at(j) <<"Here is -->"<<arr.at(i)+arr.at(j) <<std::endl;
-                    newVec.push_back(std::pair<int,int>(arr.at(i), arr.at(j)));}
-            }
-    
+         
+             for(auto it = myVector.begin(); it!=myVector.end(); it++ ){
+        if(it->first == first && it->second == second){
+        //    return 1;
+        
+         
+         //       if (isInVector(newVec,arr.at(i), arr.at(j))!=1 ){
+            std::cout<<arr.at(i)<< "---"<<arr.at(j) <<"Here is -->"<<arr.at(i)+arr.at(j) <<std::endl;
+            newVec.push_back(std::pair<int,int>(arr.at(i), arr.at(j)));}
+            }}
+    std::cout<<newVec.size();
     return  newVec;
 }
 
 int main()
 {
-    
+
     std::vector<int> myvector;
     std::vector<int> test;
     std::vector<int>::iterator it = myvector.begin();
