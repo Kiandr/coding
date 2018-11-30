@@ -14,8 +14,8 @@ int pairs(int k, vector<int> arr) {
       if (diff == k) {
         cout << arr.at(i) << "--" << arr.at(j) << '\n';
         ++count;
-      } 
-        
+      }
+
     }
   return count;
 }
