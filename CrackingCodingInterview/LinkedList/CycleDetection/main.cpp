@@ -9,7 +9,7 @@
  * };
  *
  */
-bool has_cycle(SinglyLinkedListNode* head) {
+bool foo(SinglyLinkedListNode* head) {
 
     if (head == NULL) return false;
     if (head->next == NULL) return false;
