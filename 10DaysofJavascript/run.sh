@@ -12,7 +12,7 @@ clear;
 
 runAll=false;
 runTest=true;
-testName='Day1Functions';
+testName='Day2Loops';
 
 if [ "$runAll" = true ]; then
 for d in "${root}"/* ; do
@@ -30,7 +30,7 @@ fi
 
 if [ "$runTest" = true ]; then
 for d in "${root}"/* ; do
-    if [ -d "${d}" ] && [ "${d}" = "${root}/${testName}" ]; then
+    if [ -d "${d}" ] && [ "${d}" == "${root}/${testName}" ]; then
     cd "${d}";
     echo "--------------------------------------------------------------------------";
     echo "${BLUE} ${PWD} ${NC}";
