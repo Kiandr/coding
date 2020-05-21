@@ -12,7 +12,7 @@ clear;
 
 runAll=false;
 runTest=true;
-testName='Day2Loops';
+testName='Day3Arrays';
 
 if [ "$runAll" = true ]; then
 for d in "${root}"/* ; do
