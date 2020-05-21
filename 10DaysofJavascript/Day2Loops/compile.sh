@@ -19,8 +19,9 @@ cd "${root}" || exit;
     echo "..............................................................................";
     echo "${RED} YourAnswer: $(cat "solution.js") ${NC}";
     echo "..............................................................................";
-    for i in {1..10} ; do
-    echo "${NC} $(sh "execute.sh" -p "$i") ${NC}";
+    for i in {1..1} ; do
+    value=$(<${PWD}/input/input00.txt)
+    echo "${NC} $(sh "execute.sh" -p "$value") ${NC}";
     done
 
 #    echo "${NC} HEAD  :${RED} $(git rev-parse --abbrev-ref HEAD) ${NC}";
