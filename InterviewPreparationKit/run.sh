@@ -12,7 +12,7 @@ clear;
 
 runAll=false;
 runTest=true;
-testName='001SockMerchant';
+testName='006ArraysLeftRotation';
 
 if [ "$runAll" = true ]; then
 for d in "${root}"/* ; do
@@ -34,7 +34,7 @@ for d in "${root}"/* ; do
     cd "${d}";
     echo "--------------------------------------------------------------------------";
     echo "${BLUE} ${PWD} ${NC}";
-    echo "${NC} $(sh "${PWD}/compile.sh") ${NC}";
+    echo "${NC} $(sh "${PWD}/compile.sh" ${testName}) ${NC}";
     echo "--------------------------------------------------------------------------";
     fi;
     cd "${root}";
