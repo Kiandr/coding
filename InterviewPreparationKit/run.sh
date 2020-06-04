@@ -12,7 +12,7 @@ clear;
 
 runAll=false;
 runTest=true;
-testName='006ArraysLeftRotation';
+testName='008MinimumSwaps';
 
 if [ "$runAll" = true ]; then
 for d in "${root}"/* ; do
