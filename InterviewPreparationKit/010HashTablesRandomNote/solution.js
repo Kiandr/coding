@@ -7,21 +7,17 @@ class solution {
     }
 
     get() {
-        let res = this.execute(this.inputData);
+        let res = this.execute(this.inputData[1].split(' '),this.inputData[2].split(' '));
         this.returnValue = res;
         return this.returnValue;
     }
 
-    execute(magazine, note = []) {
-        for (let word of note) {
-            const idx = magazine.indexOf(word)
-            if (idx !== -1) {
-                magazine[idx] = ""
-            } else {
-                return console.log('No')
-            }
+    execute(magazine, note ) {
+
+        for (let i = 0; i < note; i++) {
+            if(magazine.includes(note[i]))
+                console.log(`note[i]=${note[i]} data.get(note[i]) `)
         }
-        console.log('Yes')
     }
 
 }

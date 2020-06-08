@@ -7,21 +7,21 @@ class solution {
     }
 
     get() {
-        let res = this.execute(this.inputData);
+        let res = this.execute(this.inputData[1].split(' '), this.inputData[2].split(' '));
         this.returnValue = res;
         return this.returnValue;
     }
 
     execute(magazine, note) {
         for (let word of note) {
-            const idx = magazine.indexOf(word)
+            const idx = magazine.indexOf(word);
             if (idx !== -1) {
                 magazine[idx] = ""
             } else {
                 return console.log('No')
             }
         }
-        console.log('Yes')
+        return console.log('Yes')
     }
 
 }
