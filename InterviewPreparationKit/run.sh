@@ -12,7 +12,7 @@ clear;
 
 runAll=false;
 runTest=true;
-testName='008MinimumSwaps';
+testName='010HashTablesRandomNote';
 
 if [ "$runAll" = true ]; then
 for d in "${root}"/* ; do
