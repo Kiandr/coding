@@ -1,0 +1,24 @@
+{
+  "name": "cracking-coding-interview-by-kian",
+  "version": "1.0.0",
+  "description": "Cracking Coding Interview by Kian Rad ",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha \"lib/**/*.spec.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiandr/crackingcodinginterview.git"
+  },
+  "author": "Kian D.Rad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kiandr/crackingcodinginterview/issues"
+  },
+  "homepage": "https://github.com/Kiandr/crackingcodinginterview#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0",
+    "eslint": "^7.2.0"
+  }
+}
