@@ -64,6 +64,7 @@ function hasUniqueCharactersIndexOf(str) {
     }
     return true;
 }
+
 /**
  * Using a boolean array for each character ASCII character. If
  * fount more than once, then set it to false, and immediately
@@ -87,4 +88,9 @@ function hasUniqueCharactersArray(str) {
     return true;
 }
 
-module.exports = {hasUniqueCharactersSet, hasUniqueCharactersSort, hasUniqueCharactersIndexOf, hasUniqueCharactersArray};
+module.exports = {
+    hasUniqueCharactersSet,
+    hasUniqueCharactersSort,
+    hasUniqueCharactersIndexOf,
+    hasUniqueCharactersArray
+};
