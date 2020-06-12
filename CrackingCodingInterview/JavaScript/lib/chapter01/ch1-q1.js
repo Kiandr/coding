@@ -49,7 +49,7 @@ function hasUniqueCharactersSort(str) {
  * Using indexOf() method returns the first index at which a given element
  *  can be found in the array, or -1 if it is not present.
  *
- * Time: O(N lg N)
+ * Time: O(N)
  * Additional space: O(1)
  *
  * @param  {string[]} str String to check, passed in as a character array
@@ -64,5 +64,27 @@ function hasUniqueCharactersIndexOf(str) {
     }
     return true;
 }
+/**
+ * Using a boolean array for each character ASCII character. If
+ * fount more than once, then set it to false, and immediately
+ * return false;
+ *
+ * Time: O(N) where N is the length of domain character.
+ * Additional space: O(1)
+ *
+ * @param  {string[]} str String to check, passed in as a character array
+ * @return {boolean}      True if unique characters, otherwise false
+ */
+function hasUniqueCharactersArray(str) {
+    let chars = [];
 
-module.exports = {hasUniqueCharactersSet, hasUniqueCharactersSort, hasUniqueCharactersIndexOf};
+    for (let i = 0; i < str.length; ++i) {
+        if (chars.includes(str[i])) {
+            return false;
+        }
+        chars.push(str[i]);
+    }
+    return true;
+}
+
+module.exports = {hasUniqueCharactersSet, hasUniqueCharactersSort, hasUniqueCharactersIndexOf, hasUniqueCharactersArray};
