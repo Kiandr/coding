@@ -2,48 +2,71 @@
 
 class solution {
     constructor(data) {
-        this.returnValue = '10';
+        this.returnValue = '';
         // this.inputData = data.split('\n');
-        this.inputData = [1, 3, 6, 4, 1, 2];
+        this.inputData = [2, 3, 4, 1, 5];
     }
 
-    get() {
+    get() { // 3 - 4
         let res = [];
-        // res.push(this.execute(this.inputData[1].split(' ')));
+
+        // res = (this.execute(this.inputData[1].split(' ')));
         res.push(this.execute(this.inputData));
         this.returnValue = res;
         return this.returnValue;
     }
 
-    execute(arr) {
+    execute(A) {
         // write your code in JavaScript (Node.js 8.9.4)
-        let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        let sortedArray = [];
-        let len = arr.length;
-        for (var i = 0; i < len; i++) {
-            for (var j = 0; j < len - i - 1; j++) { // this was missing
-                if (arr[j] > arr[j + 1]) {
-                    // swap
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+        let counter = 0;
+        let indexSum = 0;
+        let valSum = 0;
+
+        for (let i = 0; i < A.length; i++) {
+            indexSum += i + 1;
+            valSum += A[i];
+            if (indexSum === valSum) {
+                counter++;
+            }
+        }
+
+
+        return counter;
+
+    }
+
+    solutionA(A) {
+        // write your code in JavaScript (Node.js 8.9.4)
+        let counter = 0;
+        let myMap = new Map();
+        let state = false;
+
+        for (let i = 0; i <= myMap.size; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (myMap.get(j) !== true) {
+                    state = false;
+                    j = i + 1;
+                } else {
+                    state = myMap.get(j);
+                    // console.log(`state = ${state} index= ${j} value=${myMap.get(j)}`)
                 }
             }
-        }
-        for (let i = 0; i < a.length - 1; i++) {
-            if (!sortedArray.includes(arr[i]))
-                sortedArray.push(arr[i]);
-            arr[i] = '';
-        }
-        sortedArray.sort();
-        for (let i = 0; i < sortedArray.length; i++) {
-            if (sortedArray[i] !== a[i]) {
-                return parseInt(a[i]);
+
+            if (state === true) {
+                counter++;
+                state = false;
             }
 
+
+            myMap.set(A[i], true);
+            // console.log('****COUNTER***');
+            // console.log(counter);
+            // console.log('*******');
         }
 
-        return 0;
+        console.log(counter);
+        return counter;
+
     }
 
 }

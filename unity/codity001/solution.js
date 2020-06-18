@@ -2,51 +2,45 @@
 
 class solution {
     constructor(data) {
-        this.returnValue = '10';
+        this.returnValue = '';
         this.inputData = data.split('\n');
-        // this.inputData = [1, 3, 6, 4, 1, 2];
+        // this.inputData = [2,1,3,5,4];
     }
 
-    get() {
-        // let res = [];
-        let res = (this.execute(this.inputData[1].split(' ')));
-        // res.push(this.execute(this.inputData));
+    get() { // 3 - 4
+        let res = [];
+
+        res = (this.execute(this.inputData[1].split(' ')));
+         // res.push(this.execute([2, 1]));
         this.returnValue = res;
         return this.returnValue;
     }
 
-    execute(arr) {
+    execute(A) {
         // write your code in JavaScript (Node.js 8.9.4)
-        let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        let sortedArray = [];
-        let len = arr.length;
-        for (var i = 0; i < len; i++) {
-            for (var j = 0; j < len - i - 1; j++) { // this was missing
-                if (arr[j] > arr[j + 1]) {
-                    // swap
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-        for (let i = 0; i < arr.length; i++) {
-            // console.log(arr[i]);
-            if (!sortedArray.includes(arr[i]))
-                sortedArray.push(arr[i]);
-            arr[i] = '';
-        }
-        sortedArray.sort();
-        for (let i = 0; i < sortedArray.length; i++) {
-            // console.log(`${sortedArray[i]} === ${a[i]}`)
-            if (parseInt(sortedArray[i]) !== a[i]) {
-                // console.log(`return ${a[i]}`)
-                return a[i];
-            }
+        let counter = 0;
+        let myMap = new Map();
+        for (let i = 0; i < A.length-1; i++) {
+            let state = false;
+            myMap.forEach((value, key, map) => {
+               console.log(`${value} ${key} `);
+               console.log(map)
+            });
+        //     if (state === true) {
+        //         console.log(`****`);
+        //         console.log(`A[i] = ${A[i]} i=${i}`);
+        //         console.log(`****`);
+        //         counter++
+        //     }
+        //     myMap[A[i]] = true;
 
+        myMap.set(A[i],true);
+            console.log('******')
         }
 
-        return 0;
+        // console.log(counter);
+        return counter;
+
     }
 
 }
