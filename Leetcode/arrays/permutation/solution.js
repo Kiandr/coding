@@ -36,7 +36,7 @@ class solution {
         }
         return myArray.length === 0;
 
-
+        
     }
 
 }

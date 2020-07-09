@@ -62,7 +62,88 @@ function isPermutationSorted(str1, str2) {
     return str1.every((v, i) => v === str2[i]);
 }
 
+function isPermutationMapSimplified(str1, str2) {
+    // write your code in JavaScript (Node.js 8.9.4) or higher
+    if (str1.length === 0 || str1.length !== str2.length) {
+        return false;
+    }
+
+    let myMap = new Map();
+
+    for (let i = 0; i < str1.length; i++) {
+        myMap.set(str1[i], 1)
+    }
+
+    for (let i = 0; i < str2.length; i++) {
+
+        let valid = myMap.get(str2[i]);
+
+        if (valid === 0) {
+            return false;
+        }
+
+        if (valid === 1) {
+            myMap.delete(str2[i]);
+        }
+    }
+    return myMap.size === 0;
+
+}
+
+function isPermutationArraySimplified(str1, str2) {
+    // write your code in JavaScript (Node.js 8.9.4) or higher
+    if (str1.length === 0 || str1.length !== str2.length) {
+        return false;
+    }
+
+    let myArray = new Array();
+
+    for (let i = 0; i < str1.length; i++) {
+        myArray.push(str1[i])
+    }
+
+    for (let i = 0; i < str2.length; i++) {
+
+
+        if (myArray.includes(str2[i]) === true) {
+            myArray.splice(myArray.indexOf(str2[i]), 1);
+        }
+    }
+    return myArray.length === 0;
+
+}
+
+function isPermutationArraySimplifiedWithFilter(str1, str2) {
+
+    // write your code in JavaScript (Node.js 8.9.4) or higher
+    if (str1.length === 0 || str1.length !== str2.length) {
+        return false;
+    }
+
+    let myArray = new Array();
+
+    for (let i = 0; i < str1.length; i++) {
+        myArray.push(str1[i])
+    }
+
+    for (let i = 0; i < str2.length; i++) {
+
+
+        if (myArray.includes(str2[i]) === true) {
+            myArray = myArray.filter((value, index, array) => {
+                return value !== str2[i]
+            })
+        }
+    }
+    return myArray.length === 0;
+
+}
+
+
 module.exports = {
     isPermutationSorted,
-    isPermutationMap
-}
+    isPermutationMap,
+    isPermutationMapSimplified,
+    isPermutationArraySimplified,
+    isPermutationArraySimplifiedWithFilter
+};
