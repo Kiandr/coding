@@ -59,7 +59,7 @@ function isPermutationSorted(str1, str2) {
     str1.sort();
     str2.sort();
 
-    return str1.every((v, i) => v === str2[i]);
+    return str1.every((value, index, array) => value === str2[index]);
 }
 
 function isPermutationMapSimplified(str1, str2) {
