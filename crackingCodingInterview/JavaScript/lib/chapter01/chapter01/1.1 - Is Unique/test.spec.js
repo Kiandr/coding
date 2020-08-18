@@ -1,6 +1,6 @@
 'use strict';
 const {expect} = require('chai');
-const funcs = require('./ch1-q1');
+const funcs = require('./index');
 
 for (let key in funcs) {
     let func = funcs[key];

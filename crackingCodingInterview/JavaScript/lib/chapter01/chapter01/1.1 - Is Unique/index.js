@@ -11,15 +11,15 @@
  * @return {boolean}      True if unique characters, otherwise false
  */
 function hasUniqueCharactersSet(str) {
-    let chars = new Set();
+  let chars = new Set();
 
-    for (let i = 0; i < str.length; ++i) {
-        if (chars.has(str[i])) {
-            return false;
-        }
-        chars.add(str[i]);
+  for (let i = 0; i < str.length; ++i) {
+    if (chars.has(str[i])) {
+      return false;
     }
-    return true;
+    chars.add(str[i]);
+  }
+  return true;
 }
 
 /**
@@ -34,15 +34,15 @@ function hasUniqueCharactersSet(str) {
  * @return {boolean}      True if unique characters, otherwise false
  */
 function hasUniqueCharactersSort(str) {
-    // sort string using quicksort
-    str.sort();
+  // sort string using quicksort
+  str.sort();
 
-    for (var i = 1; i < str.length; ++i) {
-        if (str[i] === str[i - 1]) {
-            return false;
-        }
+  for (var i = 1; i < str.length; ++i) {
+    if (str[i] === str[i - 1]) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 
 /**
@@ -57,12 +57,12 @@ function hasUniqueCharactersSort(str) {
  */
 function hasUniqueCharactersIndexOf(str) {
 
-    for (var i = 0; i < str.length; ++i) {
-        if (str.indexOf(str[i]) !== i) {
-            return false;
-        }
+  for (var i = 0; i < str.length; ++i) {
+    if (str.indexOf(str[i]) !== i) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }
 
 /**
@@ -77,20 +77,37 @@ function hasUniqueCharactersIndexOf(str) {
  * @return {boolean}      True if unique characters, otherwise false
  */
 function hasUniqueCharactersArray(str) {
-    let chars = [];
+  let chars = [];
 
-    for (let i = 0; i < str.length; ++i) {
-        if (chars.includes(str[i])) {
-            return false;
-        }
-        chars.push(str[i]);
+  for (let i = 0; i < str.length; ++i) {
+    if (chars.includes(str[i])) {
+      return false;
     }
-    return true;
+    chars.push(str[i]);
+  }
+  return true;
 }
 
+/**
+ *  O(n^2) approach, no additional data structures used
+ *   for each character, check remaining characters for duplicates
+ */
+
+function hasUniqueCharsAll(string) {
+
+  for (let i = 0; i < string.length; i++) {
+    for (let j = i + 1; j < string.length; j++) {
+      if (string[i] === string[j]) {
+        return false; // if match, return false
+      }
+    }
+  }
+  return true;
+};
 module.exports = {
-    hasUniqueCharactersSet,
-    hasUniqueCharactersSort,
-    hasUniqueCharactersIndexOf,
-    hasUniqueCharactersArray
+  hasUniqueCharactersSet,
+  hasUniqueCharactersSort,
+  hasUniqueCharactersIndexOf,
+  hasUniqueCharactersArray,
+  hasUniqueCharsAll,
 };
