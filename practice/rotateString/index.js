@@ -7,8 +7,16 @@ if A can become B after some number of shifts on A.
 */
 
 function foo(A, B){
+if (!isNaN(A)||!isNaN(B)||A.length<=0 || B.length<=0 || A.length !== B.length) return false;
+for(let i=0; i<A.length; i++){
+  for (let d=0; d<A.length; d++){
+    console.log (`B[${d}+${i}]=${A[d+i]} A[${i}]=${B[i]} `);
+  }
+}
+// if A[i]
 
 }
 
-console.log(foo('abcde','cdeab')===true)
-console.log(foo('abcde','abced')===false)
+foo('abcde','bcdea');
+// console.log(foo('abcde','cdeab')===true)
+// console.log(foo('abcde','abced')===false)
