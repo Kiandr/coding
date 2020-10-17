@@ -22,6 +22,8 @@ function convertStringToNumber(num1) {
 }
 
 function foo(num1, num2) {
+  // if (num1*1 === 0) return 0;
+  // if (num2*1 === 0) return 0;
 
   // split string into array char
   let A = num1.split('');
@@ -31,7 +33,7 @@ function foo(num1, num2) {
   console.log(B.length);
   // identify the longest number  and put an order
   A = A.length >= B.length ? num1.split('') : num2.split('');
-  B = A.length < B.length ? num1.split('') : num1.split('');
+  B = A.length < B.length ? num1.split('') : num2.split('');
   let d = A.length - B.length;
   console.log(`A = ${A}`);
   console.log(`B = ${B}`);
@@ -51,25 +53,37 @@ function foo(num1, num2) {
 
   // start addition
 
-  let C = 0;
+  let C = [];
   let sum = 0;
   let carryOver = 0;
   for (let i = A.length-1; i >= 0; i--) {
-    sum = (A[i] * 1 + B[i] * 1);
-    sum=sum.toString().split('')
-    console.log(typeof sum)
-    console.log(`A[${i}]=${A[i]} + B[${i}]=${B[i]} SUM = ${sum}`)
-    console.log ((A[i]*1)+(B[i]*1)+(sum[sum.length-1]*1)+(carryOver*1))
-    sum = (A[i]*1)+(B[i]*1)+(sum[sum.length-1]*1)+(carryOver*1).toString().split('');
+    sum = (A[i] * 1 + B[i] * 1)+carryOver;
+
+    console.log(`A[${i}]=${A[i]} + B[${i}]=${B[i]} SUM = ${(sum) } CarryOver = ${(sum%10)}`)
+
+
+    C.push((sum%10))
+console.log(`C=${sum%10}`)
+    carryOver = sum > 9 ? 1 :0;
+    console.log(carryOver)
+
+    // console.log ((A[i]*1)+(B[i]*1)+(sum[sum.length-1]*1)+(carryOver*1))
+    // sum = (A[i]*1)+(B[i]*1)+(sum[sum.length-1]*1)+(carryOver*1).toString().split('');
 
 
   }
+if(carryOver ===1)
+  C.push(carryOver)
 
 
-return C;
+return C.reverse().join('');
 };
-// console.log(foo("9333852702227987", "85731737104263"))
+
+"18582873146362455"
+console.log(foo("9","99"))
+// console.log(foo("9","1"))
+// console.log(foo("18582506933032752","366213329703"))
 // console.log(foo('18582506933032752', '366213329703'));
-console.log(foo('321', '99999'));
+// console.log(foo('321', '99999'));
 
 // convertStringToNumber('18582506933032752')
