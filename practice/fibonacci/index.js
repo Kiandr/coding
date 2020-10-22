@@ -22,7 +22,7 @@
  * */
 
 function foo(a, b){
-
-return parseInt(parseInt(a,2)+parseInt(b,2)).toString(2)
+  // return (BigInt(`0b${a}`) + BigInt(`0b${b}`)).toString(2)
+  console.log(BigInt(`0b${a}`))
 }
 console.log(foo(11,1))
