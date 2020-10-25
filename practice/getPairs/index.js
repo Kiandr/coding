@@ -19,4 +19,4 @@ function foo(nums) {
 }
 
 console.log(foo([1, 2, 3, 1, 1, 3]));
-// console.log(foo([1,1,1,1]))
+console.log(foo([1,1,1,1]))
