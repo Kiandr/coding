@@ -4,7 +4,18 @@
  * @return {number}
  */
 var maxDepth = function (s) {
+    let tree = []
+    let max = 0;
+    for (let i = 0; i <s.length ; i++) {
+        if(s[i]==='('){
+            tree.push(true)
+        }else if (s[i]===')'){
+            tree.pop()
 
+        }
+        max = tree.length >=max ? tree.length : max;
+    }
+return max;
 };
 console.log(maxDepth('(1+(2*3)+((8)/4))+1')); //3
 console.log(maxDepth('(1)+((2))+(((3)))')); //3
