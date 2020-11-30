@@ -7,6 +7,10 @@
  2- How to identify the odd length
  3- How to sum up from i to j subarray
  */
+function oddOrEven(x) {
+    return ( x & 1 ) ? "odd" : "even";
+}
+
 var sumOddLengthSubarrays01 = function (arr) {
     if (Array.isArray(arr) === false && arr.length <= 0) return 0;
     let subA = [];
