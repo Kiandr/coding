@@ -26,6 +26,12 @@ console.log(toLowerCase("Hello"));
 
 /**
  *
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
+ * String.prototype.charCodeAt()
+
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+ * String.fromCharCode()
+ *
  https://leetcode.com/problems/to-lower-case/discuss/963576/Memory-Usage%3A-37.9-MB-less-than-93.64-Runtime%3A-104-ms-faster-than-10.79
  Runtime: 104 ms, faster than 10.79% of JavaScript online submissions for To Lower Case.
  Memory Usage: 37.9 MB, less than 93.64% of JavaScript online submissions for To Lower Case.
