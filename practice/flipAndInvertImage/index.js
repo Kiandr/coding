@@ -10,7 +10,6 @@ const revers=function (A){
 };
 
 
-// console.log(revers([[1,2,3],[4,5,6],[7,8,9]]),([[1,2,3],[4,5,6],[7,8,9]]));
 
 
 /**
@@ -20,15 +19,17 @@ const revers=function (A){
 var flipAndInvertImage = function (A) {
     A = revers(A);
     for (let i = 0; i < A.length; i++) {
-        for (let j = 0; j < A[i].length/2 | 0; j++) {
+        for (let j = 0; j < A[i].length | 0; j++) {
             A[i][j] = A[i][j]=== 1 ? 0 : 1;
         }
     }
     return A;
 };
-// console.log([[1, 1, 0], [1, 0, 1], [0, 0, 0]]);
-// console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]]));
-// console.log([[1, 0, 0], [0, 1, 0], [1, 1, 1]]);
+
+
+console.log([[1, 1, 0], [1, 0, 1], [0, 0, 0]]);
+console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]]));
+console.log([[1, 0, 0], [0, 1, 0], [1, 1, 1]]);
 
 
 
@@ -37,6 +38,10 @@ console.log([[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]],'input');
 console.log(flipAndInvertImage([[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]),'flipAndInvertImage',);
 console.log([[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]],'expected');
 /*
+https://leetcode.com/problems/flipping-an-image/discuss/1010998/92-ms-faster-than-29.34-andand-40.9-MB-less-than-12.15
+Runtime: 92 ms, faster than 29.34% of JavaScript online submissions for Flipping an Image.
+Memory Usage: 40.9 MB, less than 12.15% of JavaScript online submissions for Flipping an Image.
+Next challenges:
 
 832. Flipping an Image
 Easy
