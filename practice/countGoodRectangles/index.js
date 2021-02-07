@@ -2,11 +2,29 @@
  * @param {number[][]} rectangles
  * @return {number}
  */
-var countGoodRectangles = function(rectangles) {
-    
+var countGoodRectangles = function (rectangles) {
+    let maxLen = 0;
+    let counter = 0;
+    for (let i = 0; i < rectangles.length; i++) {
+        // console.log(rectangles[i][0], rectangles[i][1])
+        // console.log('===', (rectangles[i][0] <= rectangles[i][1] ? rectangles[i][0] : rectangles[i][1]))
+        maxLen = maxLen <= (rectangles[i][0] <= rectangles[i][1] ? rectangles[i][0] : rectangles[i][1]) ? (rectangles[i][0] <= rectangles[i][1] ? rectangles[i][0] : rectangles[i][1]) : maxLen;
+
+    }
+    for (let i = 0; i < rectangles.length; i++) {
+        counter = maxLen === (rectangles[i][0] <= rectangles[i][1] ? rectangles[i][0] : rectangles[i][1]) ? ++counter : counter;
+        // console.log(`counter = ${counter}`);
+
+    }
+    return counter;
 };
 
+// console.log(countGoodRectangles([[5,8],[3,9],[5,12],[16,5]]))
+console.log(countGoodRectangles([[2, 3], [3, 7], [4, 3], [3, 7]]))
 /*
+https://leetcode.com/problems/number-of-rectangles-that-can-form-the-largest-square/discuss/1053439/faster-than-18.70-AND-40.9-MB-less-than-96.22
+Runtime: 124 ms, faster than 18.70% of JavaScript online submissions for Number Of Rectangles That Can Form The Largest Square.
+Memory Usage: 40.9 MB, less than 96.22% of JavaScript online submissions for Number Of Rectangles That Can Form The Largest Square.
 https://leetcode.com/problems/number-of-rectangles-that-can-form-the-largest-square/
 You are given an array rectangles where rectangles[i] = [li, wi] represents the ith rectangle of length li and width wi.
 
