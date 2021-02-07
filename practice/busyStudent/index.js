@@ -5,11 +5,20 @@
  * @return {number}
  */
 var busyStudent = function(startTime, endTime, queryTime) {
-    
+  let counter = 0;
+  for (let i = 0; i < startTime.length; i++) {
+    if(startTime[i]<= queryTime && queryTime<= endTime[i])
+      counter++
+  }
+  return counter;
 };
 
+console.log(busyStudent([1,2,3], [3,2,7],  4));
 /*
 https://leetcode.com/problems/number-of-students-doing-homework-at-a-given-time/
+https://leetcode.com/problems/number-of-students-doing-homework-at-a-given-time/discuss/1053428/faster-than-93.92-and-38.9-MB-less-than-14.02
+Runtime: 72 ms, faster than 93.92% of JavaScript online submissions for Number of Students Doing Homework at a Given Time.
+Memory Usage: 38.9 MB, less than 14.02% of JavaScript online submissions for Number of Students Doing Homework at a Given Time.
 Given two integer arrays startTime and endTime and given an integer queryTime.
 
 The ith student started doing their homework at the time startTime[i] and finished it at time endTime[i].
@@ -19,6 +28,7 @@ Return the number of students doing their homework at time queryTime. More forma
  
 
 Example 1:
+
 
 Input: startTime = [1,2,3], endTime = [3,2,7], queryTime = 4
 Output: 1
