@@ -2,11 +2,26 @@
  * @param {string[][]} paths
  * @return {string}
  */
-var destCity = function(paths) {
-    
-};
+var destCity = function (paths) {
+    for (let i = 0; i < paths.length; i++) {
+        let flag = 0;
+        for (let j = 0; j < paths.length; j++) {
+            flag |= paths[i][1]===paths[j][0]
+            // console.log(paths[i][1],paths[j][0], paths[i][1]===paths[j][0])
+            // console.log('flag',flag)
+        }
 
+        if (flag === 0)  return paths[i][1];
+    }
+    return paths[0][1];
+};
+console.log(destCity([["London", "New York"], ["New York", "Lima"], ["Lima", "Sao Paulo"]]))
+console.log(destCity([["B","C"],["D","B"],["C","A"]]))
+console.log(destCity([["A", "Z"]]))
 /*
+Runtime: 80 ms, faster than 87.86% of JavaScript online submissions for Destination City.
+Memory Usage: 39.8 MB, less than 84.95% of JavaScript online submissions for Destination City.
+https://leetcode.com/problems/destination-city/discuss/1053769/faster-than-87.86-of-JavaScript-AND-less-than-84.95-of-JavaScript
 https://leetcode.com/problems/destination-city/
 You are given the array paths, where paths[i] = [cityAi, cityBi] means there exists a direct path going from cityAi to cityBi. Return the destination city, that is, the city without any path outgoing to another city.
 
