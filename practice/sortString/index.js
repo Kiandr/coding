@@ -107,6 +107,7 @@ const sortString = function (s) {
                 freq[alphaBet.indexOf(alphaBet[i])]--;
             }
         }
+        if (freq.filter(value => value<=0)) return response;
     }
     return response
 }
