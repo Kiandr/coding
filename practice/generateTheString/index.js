@@ -3,9 +3,18 @@
  * @return {string}
  */
 var generateTheString = function(n) {
+    return n%2===0 ? (new Array(n).fill('a').join('').toLocaleLowerCase()) : (new Array(n-1).fill('a').join('').toLocaleLowerCase()+'b');
     
 };
+
+console.log(generateTheString(4))
+console.log(generateTheString(2))
+console.log(generateTheString(3))
 /*
+https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/discuss/1124222/80-ms-faster-than-59.38-AND-39-MB-less-than-45.49
+Runtime: 80 ms, faster than 59.38% of JavaScript online submissions for Generate a String With Characters That Have Odd Counts.
+Memory Usage: 39 MB, less than 45.49% of JavaScript online submissions for Generate a String With Characters That Have Odd Counts.
+
 https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/
 Given an integer n, return a string with n characters such that each character in such string occurs an odd number of times.
 
