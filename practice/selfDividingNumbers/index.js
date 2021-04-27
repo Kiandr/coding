@@ -3,9 +3,27 @@
  * @param {number} right
  * @return {number[]}
  */
-var selfDividingNumbers = function(left, right) {
-    
+var selfDividingNumbers = function (left, right) {
+    let output = [];
+    for (let i = left !== 0 ? parseInt(left) : parseInt(right); i <= right; i++) {
+
+        let num = String(i).split('');
+        let isValid = true;
+
+        if (num.length > 1) {
+            for (let j = 0; j < num.length; j++) {
+                isValid = i % num[j] == 0 && isValid;
+            }
+            if (isValid === true) {
+                output.push(i)
+            }
+        } else {
+            output.push(i)
+        }
+    }
+    return output;
 };
+console.log(selfDividingNumbers(1, 22));
 /*
 https://leetcode.com/problems/self-dividing-numbers/
 * A self-dividing number is a number that is divisible by every digit it contains.
