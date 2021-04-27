@@ -1,2 +1,3 @@
-console.log(21%2)
-console.log(21%1)
+console.log(128%1)
+console.log(128%2)
+console.log(128%8)

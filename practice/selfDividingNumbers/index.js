@@ -25,6 +25,7 @@ var selfDividingNumbers = function (left, right) {
 };
 console.log(selfDividingNumbers(1, 22));
 /*
+https://leetcode.com/problems/self-dividing-numbers/discuss/1179434/Runtime-66.57-of-javascript-andand-memory-usage-48.31-of-javascript-submissions
 https://leetcode.com/problems/self-dividing-numbers/
 * A self-dividing number is a number that is divisible by every digit it contains.
 
