@@ -1,18 +1,23 @@
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
+function TreeNode(val, left, right) {
+    this.val = (val === undefined ? 0 : val)
+    this.left = (left === undefined ? null : left)
+    this.right = (right === undefined ? null : right)
+}
+function insertNode(root, TreeNode) {
+    if (root === null ) return TreeNode(TreeNode.val, TreeNode.left, TreeNode.right)
+    else {
+        if (TreeNode.val < root)
+    }
+}
+
 /**
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var increasingBST = function(root) {
-    
+var increasingBST = function (root) {
+
 };
+
 
 /*
 https://leetcode.com/problems/increasing-order-search-tree/
