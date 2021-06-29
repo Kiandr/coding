@@ -15,14 +15,14 @@ function isBalanced(node = undefined) {
     return maxDepth(root) - minDepth(root) <= 1;
 }
 
-function maxDepth(node = undefined) {
+function maxDepth02(node = undefined) {
     if (typeof node === 'undefined') {
         return 0;
     }
     return 1 + Math.max(maxDepth(node.left), maxDepth(node.right));
 }
 
-function minDepth(node = undefined) {
+function minDepth02(node = undefined) {
     if (typeof node === 'undefined') {
         return 0;
     }
@@ -81,6 +81,7 @@ function printInOrder(root) {
     console.log(root.val)
     printInOrder(root.right)
 }
+
 function printPreOrder(root) {
     if (typeof root === 'undefined' || root === null || root === undefined)
         return root;
@@ -88,7 +89,9 @@ function printPreOrder(root) {
     console.log(root.val)
     printInOrder(root.left)
     printInOrder(root.right)
-}function printPostOrder(root) {
+}
+
+function printPostOrder(root) {
     if (typeof root === 'undefined' || root === null || root === undefined)
         return root;
 
@@ -98,6 +101,21 @@ function printPreOrder(root) {
     console.log(root.val)
 }
 
+/*
+    https://leetcode.com/problems/minimum-depth-of-binary-tree/
+    solution: https://leetcode.com/submissions/detail/513093111/
+* */
+
+function minDepth(root) {
+    if (!root) return 0;
+    return (root.left && root.right ? (minDepth(root.left) <= minDepth(root.right) ? minDepth(root.left) : minDepth(root.right)) : Math.max(minDepth(root.left), minDepth(root.right))) + 1;
+};
+
+function maxDepth(root) {
+    if (!root) return 0;
+    return (root.left && root.right ? Math.max(maxDepth(root.left), maxDepth(root.right) ? maxDepth(root.left) : maxDepth(root.right)) : Math.max(maxDepth(root.left), maxDepth(root.right))) + 1;
+};
+
 module.exports = {
     tree: tree,
     node: node,
@@ -105,6 +123,7 @@ module.exports = {
     isBalanced: isBalanced,
     maxDepth: maxDepth,
     minDepth: minDepth,
+    minDepth02: minDepth02,
     insertInOrder: insertInOrder,
     initWithArray: initWithArray,
     printInOrder: printInOrder,
