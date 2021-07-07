@@ -10,6 +10,7 @@ const tree = require('./binaryTree.js')
 
 // console.log(arr);
 
-// console.log(tree.minDepth(tree.initWithArray([3,9,20,null,null,15,7])));
-console.log(tree.minDepth(tree.initWithArray([2,null,3,null,4,null,5,null,6])));
-console.log(tree.maxDepth(tree.initWithArray([2,null,3,null,4,null,5,null,6])));
+console.log(tree.isBalanced(tree.initWithArray([3,9,20,null,null,15,7]))); // true
+console.log(tree.isBalanced(tree.initWithArray([1,2,2,3,3,null,null,4,4]))); // false
+console.log(tree.isBalanced(tree.initWithArray([]))); // true
+console.log(tree.isBalanced(tree.initWithArray([1,2,2,3,3,null,null,4,4]))); //false

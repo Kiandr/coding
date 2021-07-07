@@ -8,7 +8,7 @@ function insert(node = undefined) {
     console.log('insert')
 }
 
-function isBalanced(node = undefined) {
+function isBalanced02(node = undefined) {
     if (typeof root === 'undefined') {
         return undefined;
     }
@@ -108,13 +108,34 @@ function printPostOrder(root) {
 
 function minDepth(root) {
     if (!root) return 0;
-    return (root.left && root.right ? (minDepth(root.left) <= minDepth(root.right) ? minDepth(root.left) : minDepth(root.right)) : Math.max(minDepth(root.left), minDepth(root.right))) + 1;
+    return (root.left && root.right ?
+        Math.min(maxDepth(root.left), maxDepth(root.right) ?
+            minDepth(root.left) : minDepth(root.right)) : Math.max(minDepth(root.left), minDepth(root.right))) + 1;
 };
 
 function maxDepth(root) {
     if (!root) return 0;
-    return (root.left && root.right ? Math.max(maxDepth(root.left), maxDepth(root.right) ? maxDepth(root.left) : maxDepth(root.right)) : Math.max(maxDepth(root.left), maxDepth(root.right))) + 1;
+    return (root.left && root.right ?
+        Math.max(maxDepth(root.left), maxDepth(root.right) ?
+            maxDepth(root.left) : maxDepth(root.right)) :
+        Math.max(maxDepth(root.left), maxDepth(root.right))) + 1;
 };
+//https://leetcode.com/problems/balanced-binary-tree/
+function isBalanced(root = undefined) {
+    let res = true
+    const go = (root) => {
+        if (!root) return 0
+        let left = go(root.left)
+        let right = go(root.right)
+        if (left - right > 1 || right - left > 1) {
+            res = false
+        }
+        return Math.max(left, right) + 1
+
+    }
+    console.log(go(root))
+    return res
+}
 
 module.exports = {
     tree: tree,
